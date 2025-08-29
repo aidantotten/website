@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const SkillsSection = () => {
   const titleRef = useRef(null);
   const skillsRef = useRef(null);
+  const [animatedSkills, setAnimatedSkills] = useState(new Set());
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -10,6 +11,12 @@ const SkillsSection = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate');
+            
+            // If it's a skill item, animate the progress bar
+            if (entry.target.classList.contains('skill-item')) {
+              const skillName = entry.target.querySelector('.skill-name').textContent;
+              setAnimatedSkills(prev => new Set([...prev, skillName]));
+            }
           }
         });
       },
@@ -18,6 +25,10 @@ const SkillsSection = () => {
 
     if (titleRef.current) observer.observe(titleRef.current);
     if (skillsRef.current) observer.observe(skillsRef.current);
+
+    // Observe all skill items
+    const skillItems = document.querySelectorAll('.skill-item');
+    skillItems.forEach(item => observer.observe(item));
 
     return () => observer.disconnect();
   }, []);
@@ -82,12 +93,14 @@ const SkillsSection = () => {
                     <div key={skill.name} className="skill-item">
                       <div className="skill-header">
                         <span className="skill-name">{skill.name}</span>
-                        <span className="skill-level">{skill.level}%</span>
                       </div>
                       <div className="skill-bar">
                         <div 
-                          className="skill-progress" 
-                          style={{ width: `${skill.level}%` }}
+                          className={`skill-progress ${animatedSkills.has(skill.name) ? 'animated' : ''}`}
+                          style={{ 
+                            width: animatedSkills.has(skill.name) ? `${skill.level}%` : '0%',
+                            transitionDelay: `${skillIndex * 0.1}s`
+                          }}
                         ></div>
                       </div>
                     </div>

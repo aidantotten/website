@@ -57,7 +57,11 @@ const IntroSection = () => {
         <h1 className="intro-name" ref={nameRef}>Aidan V. Totten</h1>
         <h2 className="intro-title" ref={titleRef}>Business Systems Analyst & Software Developer</h2>
         <p className="intro-description" ref={descriptionRef}>
-          I turn complex problems into streamlined solutions across business systems, full-stack development, and data analytics. I recently earned a B.S. in Information Systems (CS minor) from Virginia Commonwealth University and work with AWS, React, Agile, and AI-driven automation to improve efficiency and decision-making.
+          I am a driven professional who earned a Bachelor of Science in Information Systems with a minor in Computer Science from Virginia Commonwealth University. My journey in technology was shaped by a desire to solve complex business problems through innovative solutions and data-driven insights.
+
+          My experience spans business systems analysis, full-stack development, and data analytics. I've had the privilege of working with cutting-edge technologies like AWS cloud services, React development, and AI-powered solutions. My role as a Business Systems Analyst at CapTech Ventures allowed me to lead cross-functional teams and develop comprehensive solutions that directly impacted business outcomes.
+
+          Beyond technical skills, I bring strong leadership experience from serving as President of VCU Men's Club Ultimate Frisbee, where I managed team operations, finances, and communications. I'm passionate about continuous learning, currently developing the Drobe fashion discovery app, and always seeking new challenges that push my technical and analytical capabilities forward.
         </p>
         <div className="intro-buttons" ref={buttonsRef}>
           <button className="intro-btn get-in-touch-btn" onClick={handleGetInTouch}>

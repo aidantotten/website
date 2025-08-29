@@ -5,6 +5,7 @@ const SocialsSection = () => {
   const social1Ref = useRef(null);
   const social2Ref = useRef(null);
   const social3Ref = useRef(null);
+  const social4Ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,6 +23,7 @@ const SocialsSection = () => {
     if (social1Ref.current) observer.observe(social1Ref.current);
     if (social2Ref.current) observer.observe(social2Ref.current);
     if (social3Ref.current) observer.observe(social3Ref.current);
+    if (social4Ref.current) observer.observe(social4Ref.current);
 
     return () => observer.disconnect();
   }, []);
@@ -32,21 +34,23 @@ const SocialsSection = () => {
         <h2 className="section-title" ref={titleRef}>Connect With Me</h2>
         <div className="socials-grid">
           <div className="social-card" ref={social1Ref}>
-            <div className="social-icon">LinkedIn</div>
             <h3 className="social-name">LinkedIn</h3>
-            <a href="https://linkedin.com/in/aidan-totten" target="_blank" rel="noopener noreferrer" className="social-link">linkedin.com/in/aidan-totten</a>
+            <a href="https://www.linkedin.com/in/aidan-totten-396b3922b/" target="_blank" rel="noopener noreferrer" className="social-link">linkedin.com/in/aidan-totten-396b3922b</a>
           </div>
 
           <div className="social-card" ref={social2Ref}>
-            <div className="social-icon">Email</div>
             <h3 className="social-name">Email</h3>
             <a href="mailto:aidanvt64@gmail.com" className="social-link">aidanvt64@gmail.com</a>
           </div>
 
           <div className="social-card" ref={social3Ref}>
-            <div className="social-icon">Phone</div>
             <h3 className="social-name">Phone</h3>
             <a href="tel:703-472-8139" className="social-link">703-472-8139</a>
+          </div>
+
+          <div className="social-card" ref={social4Ref}>
+            <h3 className="social-name">Location</h3>
+            <p className="social-link">Richmond, Virginia, 23220</p>
           </div>
         </div>
       </div>

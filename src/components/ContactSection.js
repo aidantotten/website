@@ -13,7 +13,6 @@ const ContactSection = () => {
 
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
-  const contactInfoRef = useRef(null);
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -30,7 +29,6 @@ const ContactSection = () => {
 
     if (titleRef.current) observer.observe(titleRef.current);
     if (subtitleRef.current) observer.observe(subtitleRef.current);
-    if (contactInfoRef.current) observer.observe(contactInfoRef.current);
     if (formRef.current) observer.observe(formRef.current);
 
     return () => observer.disconnect();
@@ -77,40 +75,6 @@ const ContactSection = () => {
       <div className="section-content">
         <h2 className="section-title" ref={titleRef}>Get In Touch</h2>
         <p className="section-subtitle" ref={subtitleRef}>Let's discuss opportunities and collaborations</p>
-        
-        <div className="contact-info" ref={contactInfoRef}>
-          <div className="contact-item">
-            <div className="contact-icon">Location</div>
-            <div className="contact-details">
-              <h4>Location</h4>
-              <p>Richmond, Virginia, 23220</p>
-            </div>
-          </div>
-          
-          <div className="contact-item">
-            <div className="contact-icon">Email</div>
-            <div className="contact-details">
-              <h4>Email</h4>
-              <p>aidanvt64@gmail.com</p>
-            </div>
-          </div>
-          
-          <div className="contact-item">
-            <div className="contact-icon">Phone</div>
-            <div className="contact-details">
-              <h4>Phone</h4>
-              <p>703-472-8139</p>
-            </div>
-          </div>
-          
-          <div className="contact-item">
-            <div className="contact-icon">LinkedIn</div>
-            <div className="contact-details">
-              <h4>LinkedIn</h4>
-              <p>linkedin.com/in/aidan-totten</p>
-            </div>
-          </div>
-        </div>
         
         <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
           <div className="form-group">

@@ -671,7 +671,7 @@ body {
 
 .skill-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -682,11 +682,7 @@ body {
   font-weight: 500;
 }
 
-.skill-level {
-  font-size: 0.9rem;
-  color: #ffd700;
-  font-weight: 600;
-}
+
 
 .skill-bar {
   width: 100%;
@@ -712,8 +708,16 @@ body {
   animation: shimmer 2s infinite;
 }
 
-.skill-item:hover .skill-bar::before {
+.skill-item:hover .skill-bar::before,
+.skill-item:focus .skill-bar::before {
   transform: scaleX(1);
+}
+
+/* Mobile-friendly touch interactions */
+@media (hover: none) and (pointer: coarse) {
+  .skill-item:active .skill-bar::before {
+    transform: scaleX(1);
+  }
 }
 
 .skill-progress {
@@ -724,6 +728,10 @@ body {
   position: relative;
   overflow: hidden;
   transition: width 1.5s ease;
+}
+
+.skill-progress.animated {
+  width: var(--target-width, 0%);
 }
 
 .skill-progress::after {
@@ -883,15 +891,6 @@ body {
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
 }
 
-.social-icon {
-  font-size: 1.5rem;
-  color: #ffd700;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .social-name {
   font-size: 1.3rem;
   color: #ffd700;
@@ -904,6 +903,8 @@ body {
   text-decoration: none;
   transition: color 0.3s ease;
   word-break: break-all;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .social-link:hover {
@@ -962,20 +963,14 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 215, 0, 0.1);
   transition: all 0.3s ease;
+  justify-content: center;
+  text-align: center;
 }
 
 .contact-item:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 215, 0, 0.3);
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
-}
-
-.contact-icon {
-  font-size: 1.2rem;
-  color: #ffd700;
-  font-weight: 600;
-  min-width: 80px;
-  text-align: center;
 }
 
 .contact-details h4 {
@@ -1205,6 +1200,55 @@ body {
   }
 }
 
+/* Enhanced Skills Section Mobile Styles */
+@media (max-width: 768px) {
+  .skills-category {
+    margin-bottom: 2rem;
+  }
+  
+  .category-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skill-bar {
+    height: 8px;
+  }
+  
+  .skill-progress {
+    transition: width 1s ease;
+  }
+  
+  .skill-item {
+    padding: 1rem;
+  }
+  
+
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
+  
+
+}
+
+@media (max-width: 480px) {
+  .skills-category {
+    margin-bottom: 1.5rem;
+  }
+  
+  .category-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-bar {
+    height: 6px;
+  }
+  
+
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .section {
@@ -1219,14 +1263,54 @@ body {
     font-size: 2.5rem;
   }
   
+  /* Improved Intro Section Mobile Styles */
+  .intro-section {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  .intro-content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
   .intro-name {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
   }
   
   .profile-image {
     width: 120px;
     height: 120px;
-    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro-buttons {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .intro-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
   }
   
   .experience-grid,
@@ -1236,6 +1320,23 @@ body {
   
   .socials-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .social-card {
+    padding: 1.5rem;
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contact-item {
+    padding: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
   
   .resume-card {
@@ -1250,9 +1351,7 @@ body {
     font-size: 1rem;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+
 
   .footer-content {
     grid-template-columns: 1fr;
@@ -1306,19 +1405,72 @@ body {
     font-size: 2rem;
   }
 
+  /* Enhanced Small Mobile Styles */
+  .intro-section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .intro-content {
+    padding: 0 0.5rem;
+  }
+
   .intro-name {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .intro-title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .intro-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 0.25rem;
   }
 
   .profile-image {
     width: 100px;
     height: 100px;
-    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .intro-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .intro-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .social-card {
+    padding: 1.2rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+  
+  .skill-item {
+    padding: 0.8rem;
+  }
+  
+  .skill-name {
+    font-size: 0.85rem;
+  }
+  
+
+  
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .resume-card {

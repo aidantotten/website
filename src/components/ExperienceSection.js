@@ -54,7 +54,7 @@ const ExperienceSection = () => {
                     color: '#ffd700', 
                     fontSize: '1.2rem' 
                   }}>•</span>
-                  Managed a cross-functional team of 12 using Agile and Scrum methodologies; led sprint planning, retrospectives, and standups via Jira
+                  Acted as scrum master to a cross-functional team of 12 using Agile/Scrum methodologies; led sprint planning, retrospectives, and standups via Jira
                 </li>
                 <li style={{ marginBottom: '12px', paddingLeft: '20px', position: 'relative' }}>
                   <span style={{ 
