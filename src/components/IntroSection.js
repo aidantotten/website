@@ -29,12 +29,10 @@ const IntroSection = () => {
   }, []);
 
   const handleViewResume = () => {
-    // Open resume in a new tab
     window.open('/Aidan_Totten_Resume.pdf', '_blank');
   };
 
   const handleGetInTouch = () => {
-    // Scroll to contact section
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -54,21 +52,25 @@ const IntroSection = () => {
             }}
           />
         </div>
+        
         <h1 className="intro-name" ref={nameRef}>Aidan V. Totten</h1>
+        
         <h2 className="intro-title" ref={titleRef}>Business Systems Analyst & Software Developer</h2>
+        
         <div className="intro-description" ref={descriptionRef}>
-          <p style={{ marginBottom: '1.5rem' }}>
+          <p>
             I am a driven professional who earned a Bachelor of Science in Information Systems with a minor in Computer Science from Virginia Commonwealth University. My journey in technology was shaped by a desire to solve complex business problems through innovative solutions and data-driven insights.
           </p>
-
-          <p style={{ marginBottom: '1.5rem' }}>
+          
+          <p>
             My experience spans business systems analysis, full-stack development, and data analytics. I've had the privilege of working with cutting-edge technologies like AWS cloud services, React development, and AI-powered solutions. My role as a Business Systems Analyst at CapTech Ventures allowed me to lead cross-functional teams and develop comprehensive solutions that directly impacted business outcomes.
           </p>
-
+          
           <p>
             Beyond technical skills, I bring strong leadership experience from serving as President of VCU Men's Club Ultimate Frisbee, where I managed team operations, finances, and communications. I'm passionate about continuous learning, currently developing the Drobe fashion discovery app, and always seeking new challenges that push my technical and analytical capabilities forward.
           </p>
         </div>
+        
         <div className="intro-buttons" ref={buttonsRef}>
           <button className="intro-btn get-in-touch-btn" onClick={handleGetInTouch}>
             Get in Touch

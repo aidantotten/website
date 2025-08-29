@@ -28,11 +28,11 @@ const SummarySection = () => {
         <h2 className="section-title" ref={titleRef}>About Me</h2>
         <div className="summary-content" ref={contentRef}>
           <p className="summary-text">
-            I am a driven professional currently pursuing my Bachelor of Science in Information Systems with a minor in Computer Science at Virginia Commonwealth University. My journey in technology has been driven by a desire to solve complex business problems through innovative solutions and data-driven insights.
+            I am a driven professional who earned a Bachelor of Science in Information Systems with a minor in Computer Science from Virginia Commonwealth University. My journey in technology was shaped by a desire to solve complex business problems through innovative solutions and data-driven insights.
           </p>
           <br />
           <p className="summary-text">
-            My experience spans across business systems analysis, full-stack development, and data analytics. I've had the privilege of working with cutting-edge technologies like AWS cloud services, React development, and AI-powered solutions. My role as a Business Systems Analyst at CapTech Ventures allowed me to lead cross-functional teams and develop comprehensive solutions that directly impact business outcomes.
+            My experience spans business systems analysis, full-stack development, and data analytics. I've had the privilege of working with cutting-edge technologies like AWS cloud services, React development, and AI-powered solutions. My role as a Business Systems Analyst at CapTech Ventures allowed me to lead cross-functional teams and develop comprehensive solutions that directly impacted business outcomes.
           </p>
           <br />
           <p className="summary-text">
