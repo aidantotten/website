@@ -1306,7 +1306,7 @@ body {
   .profile-image {
     width: 120px;
     height: 120px;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
   }
   
@@ -1417,7 +1417,7 @@ body {
 
   /* Enhanced Small Mobile Styles */
   .intro-section {
-    padding: 1.5rem 0.5rem;
+    padding: 3rem 0.5rem 1.5rem 0.5rem;
   }
   
   .intro-content {
@@ -1446,7 +1446,7 @@ body {
   .profile-image {
     width: 100px;
     height: 100px;
-    margin-top: 1.5rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
   }
   
