@@ -1,0 +1,7 @@
+# Resend Configuration
+RESEND_API_KEY=re_your_actual_api_key_here
+FROM_EMAIL=noreply@aidantotten.org
+TO_EMAIL=aidan@aidantotten.org
+
+# Server Configuration
+PORT=5000

@@ -18,17 +18,17 @@
 ## 3. Verify Your Domain (Required for Production)
 
 1. In your Resend dashboard, go to Domains
-2. Add and verify your domain (e.g., `yourdomain.com`)
-3. Update the `from` email in `src/services/resendService.js`:
+2. Add and verify your domain: `aidantotten.org`
+3. Update the `from` email in `server.js`:
    ```javascript
-   from: 'noreply@yourdomain.com', // Replace with your verified domain
+   from: 'noreply@aidantotten.org', // Your verified domain
    ```
 
 ## 4. Update Email Recipients
 
-1. In `src/services/resendService.js`, update the recipient email:
+1. In `server.js`, update the recipient email:
    ```javascript
-   to: 'your-email@example.com', // Replace with your email
+   to: 'aidan@aidantotten.org', // Your email address
    ```
 
 ## 5. Test the Integration
