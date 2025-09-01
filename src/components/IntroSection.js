@@ -63,7 +63,7 @@ const IntroSection = () => {
           </p>
           
           <p>
-            My experience spans business systems analysis, full-stack development, and data analytics. I've had the privilege of working with cutting-edge technologies like AWS cloud services, React development, and AI-powered solutions. My role as a Business Systems Analyst at CapTech Ventures allowed me to lead cross-functional teams and develop comprehensive solutions that directly impacted business outcomes.
+            My experience spans business systems analysis, full-stack development, and data analytics. I've had the privilege of working with cutting-edge technologies like AWS cloud services, React development, and AI-powered solutions.
           </p>
           
           <p>
